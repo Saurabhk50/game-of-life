@@ -14,7 +14,7 @@ pipeline {
           stage('Deploy') {
                 steps {
                 sh'''
-                   scp /root/.jenkins/workspace/Mvn BuildPipeline/gameoflife-web/target/gameoflife.war /mnt/apache-tomcat-9.0.80/webapps/
+                   cp /root/.jenkins/workspace/Mvn BuildPipeline/gameoflife-web/target/gameoflife.war /mnt/apache-tomcat-9.0.80/webapps/
                 '''
      
              }
