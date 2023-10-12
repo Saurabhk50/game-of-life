@@ -1,11 +1,11 @@
 pipeline 
 {
-    agent any {
+    agent {
 	node {
-			label 'built-in'
-			customworkspace '/home/ec2-user'
+		label 'built-in'
+		customworkspace '/home/ec2-user'
 		}
-			}
+	}
     stages {
         stage('CheckoutGit') {
             steps {
@@ -27,7 +27,7 @@ pipeline
             steps {
                 // Deploying war to tomcat
                 sh '''
-                cp /home/ec2-user/Game of life/gameoflife-web/target/gameoflife.war /mnt/apache-tomcat-9.0.80/webapps/
+                cp /home/ec2-user/Gameoflife/gameoflife-web/target/gameoflife.war /mnt/apache-tomcat-9.0.80/webapps/
                 '''
 				}
 			}
